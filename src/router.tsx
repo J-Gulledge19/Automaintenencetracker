@@ -8,8 +8,8 @@ import Update from "./pages/Update"
 
 const router = createBrowserRouter(createRoutesFromElements(
   <>
-      <Route path="/" element={<App/>} loader={indexLoader}>
-          <Route path="" element={<Index/>}/>
+      <Route path="/" element={<App/>} loader= {indexLoader} >
+          <Route path="" element={<Index/>} loader= {indexLoader}/>
           <Route path="show/:id" element={<Show/>} />
           <Route path="create" element={<Create/>} />
           <Route path="edit/:id" element={<Update/>} />

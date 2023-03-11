@@ -1,6 +1,6 @@
 import url from "./url";
 
-interface Car {
+export interface Car {
     id:number
     maintenance: []
     name: string
@@ -13,6 +13,6 @@ export function indexLoader(): Promise<Car[]> {
             .then(res => res.json())
             .then(res => {
                     console.log(res)
-                    return res as Car[]
+                    return res as Car[] 
             })
 }
