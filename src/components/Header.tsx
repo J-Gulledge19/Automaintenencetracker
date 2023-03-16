@@ -1,9 +1,11 @@
-import { useLoaderData, Link } from 'react-router-dom';
-import { Car } from '../loaders';
-
+import { observer } from 'mobx-react';
+import { Link } from 'react-router-dom';
+import { Car } from '../Utilities/Interfaces';
+import { store } from '../router';
+// console.log(store.carStore._cars)
 function Header() {
-  const cars = useLoaderData() as unknown as Car[];
-  console.log(`Header:${cars}`)
+  // const cars: Car[] = props.store.carStore;
+  // console.log(`Header:${cars}`)
 
   return (
     <>
@@ -15,7 +17,7 @@ function Header() {
 
         <div className="carlist"> 
           <h3>My Vehicle's:</h3> 
-            {cars.map(car => (
+            {store.carStore._cars.map(car => ( 
           <div>
             <Link to={`show/${car.id}`}>
             <h5>{car.name}</h5>
@@ -28,4 +30,4 @@ function Header() {
   )
 }
 
-export default Header
+export default observer(Header)
