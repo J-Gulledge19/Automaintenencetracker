@@ -5,14 +5,9 @@ import Show from "./pages/Show"
 import Create from "./pages/Create"
 import Update from "./pages/Update"
 import { RootStore } from "./stores/RootStore"
-// import { setTimeout } from "timers"
+
 export const store = new RootStore()
-// carStore.init()
-// const carList = carStore.getCarsList()
-// const resolveList = carList.length ? carList : setTimeout(() => {
-//   return carList
-// }, 1000); 
-// console.log(carList)
+
 const router = createBrowserRouter(createRoutesFromElements(
   <>
       <Route path="/" element={<App/>}>

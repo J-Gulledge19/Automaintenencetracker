@@ -1,10 +1,9 @@
 import {observer} from 'mobx-react'
 import { store } from '../router';
 import Index from './Index';
-import { useParams } from 'react-router-dom';
 
 function Show() {
-  let {id} = useParams()
+
   const selectedCar = store.carStore._cars.find(car => car.id)
   return (
         <div className="showcard">

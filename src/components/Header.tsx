@@ -1,11 +1,8 @@
 import { observer } from 'mobx-react';
 import { Link } from 'react-router-dom';
-import { Car } from '../Utilities/Interfaces';
 import { store } from '../router';
-// console.log(store.carStore._cars)
+
 function Header() {
-  // const cars: Car[] = props.store.carStore;
-  // console.log(`Header:${cars}`)
 
   return (
     <>
