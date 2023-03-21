@@ -30,7 +30,7 @@ body{
 /* Side bar */
 .carlist{
   background-color: #1d65ff;
-  max-width: 250px;
+  max-width: 240px;
   margin-top: 0px;
   padding-left: 2rem;
   position: absolute;
@@ -58,13 +58,40 @@ img{
   display: flex;
   justify-content: center;
   position: absolute;
-  left: 250px;
+  left: 270px;
   margin-top: 6rem;
 }
 
 .intro img{
-      max-width: 400px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+  max-width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.showTitle{
+  text-align: center;
+}
+
+.showImage{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table, th, td {
+  position: relative;
+  border: 1px solid;
+  background-color: rgb(230, 229, 229);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  box-shadow: 2px 2px 5px rgb(6, 6, 6), 0px 0px 10px rgb(177, 175, 175); 
+  max-width: 600px; 
+  border-radius: 6px; 
+}
+
+textarea{
+  width: 50vw;
 }

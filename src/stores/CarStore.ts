@@ -15,6 +15,7 @@ export default class CarStore{
             _cars: observable,
             selectedCarId: observable,
             fetchCars: action,
+            fetchSelectedCar: action
         })
     }
     private async init() {
@@ -35,7 +36,14 @@ export default class CarStore{
     async fetchCars() {
         const res = (await fetch(`${url}/car/`))
         const body = (await res.json())
-        console.log(body)
         return body
     }
+
+    async fetchSelectedCar(...params : number[]) {
+        const res = (await fetch(`${url}/car/${params}`))
+        const car = (await res.json())
+        console.log(`fetchSelectedCar ${car}`)
+        return car
+    }
+    
 }

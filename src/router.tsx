@@ -14,7 +14,7 @@ const router = createBrowserRouter(createRoutesFromElements(
           <Route path="" element={<Index/>}/>
           <Route path="show/:id" element={<Show/>} />
           <Route path="create" element={<Create/>} />
-          <Route path="edit/:id" element={<Update/>} />
+          <Route path="edit/:id/:maintId" element={<Update/>} />
           <Route path="update/:id" />
           <Route path="delete/:id" />
       </Route>
