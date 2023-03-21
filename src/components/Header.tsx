@@ -13,13 +13,12 @@ function Header() {
        </nav>
 
         <div className="carlist"> 
-          <h3>My Vehicle's:</h3> 
+          <h2>My Vehicle's:</h2> 
             {store.carStore._cars.map(car => ( 
               <div>
             <Link to={`show/${car.id}`}>
-            <h5>{car.name}</h5>
+            <h3>{car.name}</h3>
             </Link>
-              <img src={car.image} alt='undefined'/>
           </div>
         ))}
       </div>
