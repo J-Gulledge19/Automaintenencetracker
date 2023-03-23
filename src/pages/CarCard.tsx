@@ -1,8 +1,10 @@
 import { AiFillEdit } from 'react-icons/ai';
 import { RiDeleteBin5Line } from 'react-icons/ri';
+import { IoIosAddCircleOutline } from 'react-icons/io'
 import { Link} from "react-router-dom"
 import { Car } from '../Utilities/Interfaces';
 import { Maint } from '../Utilities/Interfaces';
+import { store } from '../router';
 
 interface CarCardProps {
     selectedCar: Car;
@@ -14,6 +16,10 @@ const CarCard: React.FC<CarCardProps> = ({selectedCar}: CarCardProps) => {
             <div className="show-page">
                 <h1>{selectedCar.name}</h1>
                 <img className="showImage" src={selectedCar.image} alt="" />
+                <Link to={`/newmaint/${selectedCar.id}`}>
+                New Maintenance
+                <IoIosAddCircleOutline/>
+                </Link>
                 <table>
                     <tr>
                         <th>Maintenance Done</th>
@@ -32,7 +38,11 @@ const CarCard: React.FC<CarCardProps> = ({selectedCar}: CarCardProps) => {
                         <Link to={`/edit/${selectedCar.id}/${maint.id}`}>
                             <td><AiFillEdit/></td>
                         </Link>
-                            <td><RiDeleteBin5Line/></td> 
+                            <td onClick={async () => {
+                                await store.carStore.deleteMaintAction(maint.id)
+                            }}>
+                                <RiDeleteBin5Line />
+                            </td> 
                     </tr>    
                 ))}  
                 </table>

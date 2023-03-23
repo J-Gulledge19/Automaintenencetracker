@@ -1,19 +1,25 @@
 import React from 'react'
 import {observer} from 'mobx-react'
 import { store } from '../router';
-import { Form, useParams } from "react-router-dom"
-import { Car, Maint } from '../Utilities/Interfaces';
+import { Form, useParams, useNavigate } from "react-router-dom"
+import { Car } from '../Utilities/Interfaces';
+
 
 function Update() {
   const { id, maintId } = useParams()
+  let navigate = useNavigate()
   const car: Car | undefined = store.carStore._cars.find(car => car.id === parseInt(id!))
   const maint = car!.maintenance.find(maint => maint.id === parseInt(maintId!))
-    console.log(maint)
+
     return (
       <div className="showcard">
         {maint && <div className="form-page">
           <h2>Update {maint.type}</h2>
-          <Form action={`/update/${maint.id}`} method="post">
+          <Form onSubmit={async (event: any) => { 
+            await store.carStore.updateAction(event, car!.id, parseInt(maintId!))
+            navigate(`/show/${car!.id}`)
+            }}
+            method="post">
             <h4>Type of maintenance done:</h4>
               <textarea typeof="input" name="type" defaultValue={maint.type} /><br/>
             <h4>Date Done:</h4>
