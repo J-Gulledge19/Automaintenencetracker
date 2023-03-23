@@ -17,6 +17,7 @@ export default class CarStore{
             fetchSelectedCar: action,
             createMaint: action,
             updateAction: action,
+            createCar: action,
         })
     }
     private async init() {
@@ -48,6 +49,26 @@ export default class CarStore{
         return car
     }
 
+    // Creat new car
+    async createCar(e: any) {
+        e.preventDefault();
+        const formData = new FormData(e.target)
+
+        const newCar = {
+            name: formData.get("name"),
+            image: formData.get("image"),
+        }
+
+        await fetch(`${url}/car/`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newCar)
+        })
+        await this.init()
+    }
+
     // Creat new maintenance item
     async createMaint(e: any, carId: number) {
         e.preventDefault();
@@ -60,7 +81,7 @@ export default class CarStore{
             due: formData.get("due"),
             car: carId,
         }
-        console.log(newMaint)
+
         await fetch(`${url}/maint/`, {
             method: "post",
             headers: {
@@ -75,7 +96,7 @@ export default class CarStore{
 
     // Update Maintenance for a car
     async updateAction(e: any, carId: number, maintId: number) {
-        console.log(carId)
+
         e.preventDefault();
         const formData = new FormData(e.target)
 
@@ -87,8 +108,6 @@ export default class CarStore{
             due: formData.get("due"),
             car: carId,
         }
-        console.log(updatedMaint)
-
     
         // send request to backend
         await fetch(`${url}/maint/${maintId}/`, {

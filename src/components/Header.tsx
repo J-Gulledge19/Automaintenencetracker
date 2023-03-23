@@ -9,7 +9,7 @@ function Header() {
        <nav className="nav">
            <h1>My Vehicle Maintenance</h1>
            <Link to='/'>Home</Link>
-          <Link to='/create'> Add Car </Link>
+          <Link to='/create'> Add Vehicle </Link>
        </nav>
 
         <div className="carlist"> 
