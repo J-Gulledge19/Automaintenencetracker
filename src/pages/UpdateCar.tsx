@@ -5,7 +5,8 @@ import { Form, useParams, useNavigate } from "react-router-dom"
 import { Car } from '../Utilities/Interfaces';
 
 
-function UpdateCar() {
+
+function UpdateCar(this: any) {
   const { id } = useParams()
   let navigate = useNavigate()
   const car: Car | undefined = store.carStore._cars.find(car => car.id === parseInt(id!))
@@ -21,9 +22,9 @@ function UpdateCar() {
             }}
             method="post">
             <h4>Type of Car:</h4>
-              <textarea typeof="input" name="name" defaultValue={car.name} /><br/>
+              <textarea  key={car.name} typeof="input" name="name" defaultValue={car.name} /><br/>
             <h4>Date Done:</h4>
-              <textarea typeof="input" name="image" defaultValue={car.image} /><br/>
+              <textarea key={car.image} typeof="input" name="image" defaultValue={car.image} /><br/>
             <input type="submit" value={`Update ${car.name}`} />
           </Form>
         </div>}
