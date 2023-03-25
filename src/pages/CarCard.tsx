@@ -35,13 +35,13 @@ const CarCard: React.FC<CarCardProps> = ({selectedCar}: CarCardProps) => {
                         <td>{maint.date}</td>
                         <td>{maint.mileage}</td>
                         <td>{maint.due}</td>
-                        <Link to={`/edit/${selectedCar.id}/${maint.id}`}>
+                        <Link className="link" to={`/edit/${selectedCar.id}/${maint.id}`}>
                             <td><AiFillEdit/></td>
                         </Link>
                             <td onClick={async () => {
                                 await store.carStore.deleteMaintAction(maint.id)
                             }}>
-                                <RiDeleteBin5Line />
+                                <RiDeleteBin5Line className='deletebutton' />
                             </td> 
                     </tr>    
                 ))}  

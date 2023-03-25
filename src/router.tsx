@@ -4,8 +4,10 @@ import Index from "./pages/Index"
 import Show from "./pages/Show"
 import NewCar from "./pages/NewCar"
 import Update from "./pages/Update"
+import UpdateCar from "./pages/UpdateCar"
 import CreateMaint from "./pages/CreateMaint"
 import { RootStore } from "./stores/RootStore"
+
 
 export const store = new RootStore()
 
@@ -17,8 +19,7 @@ const router = createBrowserRouter(createRoutesFromElements(
           <Route path="create" element={<NewCar/>} />
           <Route path="newmaint/:id" element={<CreateMaint/>} />
           <Route path="edit/:id/:maintId" element={<Update/>} />
-          <Route path="update/:id" />
-          <Route path="delete/:id" />
+          <Route path="editcar/:id" element={<UpdateCar/>}/>
       </Route>
   </>
 ))

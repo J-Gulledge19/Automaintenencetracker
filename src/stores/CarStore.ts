@@ -92,7 +92,28 @@ export default class CarStore{
         await this.init()
     }
 
-        
+    // Update Car
+    async updateCarAction(e: any, carId: number) {
+    
+        e.preventDefault();
+        const formData = new FormData(e.target)
+
+        const updatedCar = {
+            id: carId,
+            name: formData.get("name"),
+            image: formData.get("image"),
+        }
+    
+        // send request to backend
+        await fetch(`${url}/car/${carId}/`, {
+            method: "put",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updatedCar)
+        })
+        await this.init()
+    } 
 
     // Update Maintenance for a car
     async updateAction(e: any, carId: number, maintId: number) {

@@ -39,9 +39,28 @@ body{
   height: 100vh;
 }
 
+.vehicles{
+  display: flex;
+  flex-direction: row;
+}
+
 .deletebutton:hover{
   cursor: pointer;
+  color: rgb(8, 177, 255);
 }
+
+.link{
+  color: black;
+}
+
+.link:visited{
+  color: rgb(0, 0, 0);
+}
+
+.link:hover{
+  color: rgb(8, 177, 255);
+}
+
 
 /* Base image */
 img{
