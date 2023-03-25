@@ -1,6 +1,7 @@
 import { observer } from 'mobx-react';
 import { Link } from 'react-router-dom';
 import { store } from '../router';
+import { RiDeleteBin5Line } from 'react-icons/ri';
 
 function Header() {
 
@@ -19,6 +20,11 @@ function Header() {
             <Link to={`show/${car.id}`}>
             <h3>{car.name}</h3>
             </Link>
+          <div className='deletebutton'
+              onClick={async () => {
+              await store.carStore.deleteCarAction(car.id)}}>
+                <RiDeleteBin5Line />
+          </div>
           </div>
         ))}
       </div>

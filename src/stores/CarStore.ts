@@ -120,6 +120,15 @@ export default class CarStore{
         await this.init()
     }
 
+        //Delete Car
+        async deleteCarAction(CarId: number){
+            // send request to backend
+            await fetch(`${url}/car/${CarId}/`, {
+                method: "delete",
+            })
+            await this.init()
+        }
+
     //Delete Maintenance for a car
     async deleteMaintAction(maintId: number){
         // send request to backend
