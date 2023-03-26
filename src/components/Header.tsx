@@ -18,16 +18,21 @@ function Header() {
           <h2>My Vehicle's:</h2> 
             {store.carStore._cars.map(car => ( 
             <div className='vehicles'>
-              <Link className="link" to={`show/${car.id}`}>
-              <h3>{car.name}</h3>
-              </Link>
-              <Link className="link" to={`/editcar/${car.id}`}>
-                <AiFillEdit/>
-              </Link>
-              <div className='deletebutton'
-                onClick={async () => {
-                await store.carStore.deleteCarAction(car.id)}}>
-                  <RiDeleteBin5Line />
+              <div className="dropdown">
+                <button className="dropbtn">{car.name}</button>
+                <div className="dropdown-content">
+                <Link className="link" to={`show/${car.id}`}>
+                <p>View</p>
+                </Link>
+                  <Link className="link" to={`/editcar/${car.id}`}>
+                    <AiFillEdit/>Edit
+                  </Link>
+                  <div className='deletebutton'
+                    onClick={async () => {
+                    await store.carStore.deleteCarAction(car.id)}}>
+                      <RiDeleteBin5Line />Delete
+                  </div>
+                </div>
               </div>
             </div>
         ))}
