@@ -36,7 +36,7 @@ const CarCard: React.FC<CarCardProps> = ({selectedCar}: CarCardProps) => {
                         <td>{maint.mileage}</td>
                         <td>{maint.due}</td>
                         <Link className="link" to={`/edit/${selectedCar.id}/${maint.id}`}>
-                            <td><AiFillEdit/></td>
+                            <td className='show-edit'><AiFillEdit/></td>
                         </Link>
                             <td onClick={async () => {
                                 await store.carStore.deleteMaintAction(maint.id)
