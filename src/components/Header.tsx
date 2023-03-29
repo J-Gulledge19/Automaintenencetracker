@@ -15,7 +15,7 @@ function Header() {
        </nav>
 
         <div className="carlist"> 
-          <h2>My Vehicle's:</h2> 
+          <h2 className='maindrop'>My Vehicle's:</h2> 
             {store.carStore._cars.map(car => ( 
             <div className='vehicles'>
               <div className="dropdown">
