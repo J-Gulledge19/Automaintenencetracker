@@ -1,6 +1,31 @@
 /* main body */
-body{
-  background-color: silver;
+
+html{ 
+  background: url("https://i.imgur.com/GhkhCQV.png") no-repeat center center fixed; 
+  background-color: rgb(105, 83, 52);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+main{
+  position: relative;
+  overflow-y: scroll;
+  overflow: hidden;
+}
+
+.form-page, .intro{
+  background-color: rgb(230, 228, 228);
+  padding-bottom: 20px;
+  border-radius: 20px;
+}
+
+.showtitle{
+  /* background-color: rgb(230, 228, 228); */
+  text-shadow: 1px 1px #9a9999;
+  color: #131821;
+  border-radius: 50%;
 }
 
 /* Nav bar styling */
@@ -126,7 +151,7 @@ table, th, td {
   margin-left: auto;
   margin-right: auto;
   margin-top: auto;
-  box-shadow: 2px 2px 5px rgb(6, 6, 6), 0px 0px 10px rgb(177, 175, 175); 
+  box-shadow: 4px 4px 5px rgb(6, 6, 6), 0px 0px 10px rgb(86, 86, 86); 
   max-width: 600px; 
   border-radius: 6px; 
 }

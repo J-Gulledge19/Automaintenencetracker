@@ -19,7 +19,7 @@ const CarCard: React.FC<CarCardProps> = ({selectedCar}: CarCardProps) => {
                         <img className="img" src={selectedCar.image} alt="" />
                     </div>
                 </div>
-                <h1>{selectedCar.name}</h1>
+                <h1 className='showtitle'>{selectedCar.name}</h1>
                 <Link className="button" to={`/newmaint/${selectedCar.id}`}>
                 New Maintenance
                 <IoIosAddCircleOutline/>
