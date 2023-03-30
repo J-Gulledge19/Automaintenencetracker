@@ -14,8 +14,12 @@ const CarCard: React.FC<CarCardProps> = ({selectedCar}: CarCardProps) => {
   return (
         <div className="showcard">
             <div className="show-page">
+                <div className="container">
+                    <div className="image">
+                        <img className="img" src={selectedCar.image} alt="" />
+                    </div>
+                </div>
                 <h1>{selectedCar.name}</h1>
-                <img className="showImage" src={selectedCar.image} alt="" />
                 <Link className="button" to={`/newmaint/${selectedCar.id}`}>
                 New Maintenance
                 <IoIosAddCircleOutline/>
