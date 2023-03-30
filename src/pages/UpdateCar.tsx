@@ -23,7 +23,7 @@ function UpdateCar(this: any) {
             method="post">
             <h4>Type of Car:</h4>
               <textarea  key={car.name} typeof="input" name="name" defaultValue={car.name} /><br/>
-            <h4>Date Done:</h4>
+            <h4>Car Image:</h4>
               <textarea key={car.image} typeof="input" name="image" defaultValue={car.image} /><br/>
             <input type="submit" value={`Update ${car.name}`} />
           </Form>
