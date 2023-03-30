@@ -23,8 +23,8 @@ main{
 
 .showtitle{
   /* background-color: rgb(230, 228, 228); */
-  text-shadow: 1px 1px #9a9999;
-  color: #131821;
+  text-shadow: 3px 3px 5px #999a9a;
+  color: #131c21;
   border-radius: 50%;
 }
 
@@ -55,7 +55,7 @@ main{
 
 /* Side bar */
 .carlist{
-  background-color: #1d65ff;
+  background-color: #0d8cba;
   max-width: 12rem;
   margin-top: 0px;
   padding-left: 2rem;
@@ -146,7 +146,8 @@ h1{
 table, th, td {
   position: relative;
   border: 1px solid;
-  background-color: rgb(230, 229, 229);
+  background-color: rgb(209, 209, 208);
+  color: #000000;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -190,7 +191,7 @@ textarea{
 /* Dropdown Button */
 .dropbtn {
   background-color: #090909;
-  color: rgb(3, 217, 255);
+  color: rgb(206, 206, 206);
   padding: 8px;
   margin-bottom: 20px;
   width: 140px;
