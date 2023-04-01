@@ -6,6 +6,7 @@ A website for keeping track of all maintenance done on your vehicles.
 
 - Css
 - React
+- Mobx
 - Python
 - Django
 
