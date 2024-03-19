@@ -12,6 +12,9 @@ A website for keeping track of all maintenance done on your vehicles.
 ### New Technology
 
 - typescript
+- Mobx
+
+### [Backend Repo](https://github.com/J-Gulledge19/Carmaintenancebackend)
 
 
 ### Link to Trello Board
